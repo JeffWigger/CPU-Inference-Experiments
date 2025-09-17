@@ -37,6 +37,7 @@ tqdm = "^4.67.1"
 scikit-learn = "^1.7.1"
 accelerate = "^1.10.1"
 sentencepiece = "^0.2.1"
+matplotlib = "^3.10.6"
 
 
 [[tool.poetry.source]]
