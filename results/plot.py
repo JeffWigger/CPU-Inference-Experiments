@@ -55,20 +55,20 @@ b_no_opt = df_b[df_b.experiment == "bert_no_opt"]
 b_compiled = df_b[df_b.experiment == "bert_compiled"]
 datasets = [b_no_opt, b_compiled]
 labels = ["No Optimization", "Compiled"]
-crate_plot(datasets, labels, "bert_compiled.svg", "Bert Compiled")
+crate_plot(datasets, labels, "bert_compiled.svg", "BERT Compiled")
 
 
-# OpenVino
+# OpenVINO
 r_ovn = df[df.experiment == "resnet_ovn"]
 r_compiled_ovn = df[df.experiment == "resnet_compile_ovn"]
 datasets = [r_no_opt, r_compiled_ovn, r_ovn]
-labels = ["No Optimization", "Compiled OpenVino", "OpenVino"]
-crate_plot(datasets, labels, "resnet_ovn.svg", "Resnet OpenVino")
+labels = ["No Optimization", "Compiled OpenVINO", "OpenVINO"]
+crate_plot(datasets, labels, "resnet_ovn.svg", "Resnet OpenVINO")
 
 b_compiled_ovn = df_b[df_b.experiment == "bert_compile_ovn"]
 datasets = [b_no_opt, b_compiled_ovn]
-labels = ["No Optimization", "Compiled OpenVino"]
-crate_plot(datasets, labels, "bert_ovn.svg", "Bert OpenVino")
+labels = ["No Optimization", "Compiled OpenVINO"]
+crate_plot(datasets, labels, "bert_ovn.svg", "BERT OpenVINO")
 
 
 # IPEX
@@ -81,7 +81,7 @@ crate_plot(datasets, labels, "resnet_ipex.svg", "Resnet IPEX")
 b_compiled_ipex = df_b[df_b.experiment == "bert_compile_ipex"]
 datasets = [b_no_opt, b_compiled_ipex]
 labels = ["No Optimization", "Compiled IPEX"]
-crate_plot(datasets, labels, "bert_ipex.svg", "Bert IPEX")
+crate_plot(datasets, labels, "bert_ipex.svg", "BERT IPEX")
 
 
 # ONNX
@@ -91,6 +91,7 @@ labels = ["No Optimization", "Compiled ONNX"]
 crate_plot(datasets, labels, "resnet_onnx.svg", "Resnet ONNX")
 
 b_onnx = df_b[df_b.experiment == "bert_onnx"]
-datasets = [b_no_opt, b_onnx]
-labels = ["No Optimization", "ONNX"]
-crate_plot(datasets, labels, "bert_onnx.svg", "Bert ONNX")
+b_ovn_onnx = df_b[df_b.experiment == "bert_ovn_onnx"]
+datasets = [b_no_opt, b_onnx, b_ovn_onnx]
+labels = ["No Optimization", "ONNX", "OpenVINO ONNX"]
+crate_plot(datasets, labels, "bert_onnx.svg", "BERT ONNX")
